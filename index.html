@@ -1,0 +1,1299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daniel A. Aboagye — Academic Profile</title>
+
+<style>
+:root{
+  color-scheme: light dark;
+  --bg: light-dark(#f6f7f2,#101411);
+  --surface: light-dark(#ffffff,#171c18);
+  --surface2: light-dark(#edf1e9,#1d241f);
+  --text: light-dark(#172019,#edf2ed);
+  --muted: light-dark(#5c675f,#aeb9b1);
+  --line: light-dark(#dce2db,#303932);
+  --accent: light-dark(#176b57,#67c6a9);
+  --accent2: light-dark(#dfeee8,#1e3930);
+  --shadow: 0 10px 30px rgba(20,35,27,.05);
+}
+
+*{
+  box-sizing:border-box
+}
+
+html{
+  scroll-behavior:smooth
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  line-height:1.7
+}
+
+#app{
+  min-height:100vh;
+  background-color:var(--bg)
+}
+
+a{
+  color:var(--accent);
+  text-decoration:none
+}
+
+a:hover{
+  text-decoration:underline
+}
+
+.container{
+  width:min(980px,90vw);
+  margin:auto
+}
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:color-mix(in srgb,var(--surface) 96%,transparent);
+  border-bottom:1px solid var(--line)
+}
+
+.nav-inner{
+  height:74px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px
+}
+
+.brand{
+  font-weight:700;
+  letter-spacing:-.02em;
+  color:var(--text);
+  font-size:1.02rem
+}
+
+.nav-links{
+  display:flex;
+  gap:26px;
+  font-size:.88rem
+}
+
+.nav-links a{
+  color:var(--muted)
+}
+
+.hero{
+  padding:76px 0 62px;
+  display:grid;
+  grid-template-columns:1fr 300px;
+  gap:72px;
+  align-items:start
+}
+
+.kicker{
+  font-size:.82rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:750
+}
+
+h1{
+  font-size:clamp(2.8rem,6vw,4.7rem);
+  line-height:1.02;
+  letter-spacing:-.055em;
+  margin:15px 0 22px;
+  max-width:700px
+}
+
+.lead{
+  font-size:1.08rem;
+  line-height:1.75;
+  color:var(--muted);
+  max-width:670px
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:28px
+}
+
+.btn{
+  display:inline-flex;
+  padding:11px 17px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  font-weight:700;
+  color:var(--text);
+  background:var(--surface)
+}
+
+.btn.primary{
+  background:var(--accent);
+  border-color:var(--accent);
+  color:white
+}
+
+.btn:hover{
+  text-decoration:none;
+  transform:translateY(-1px)
+}
+
+.profile-card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:6px;
+  padding:24px;
+  box-shadow:var(--shadow)
+}
+
+.profile-mark{
+  width:96px;
+  height:96px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:var(--accent2);
+  color:var(--accent);
+  font-size:1.55rem;
+  font-weight:800;
+  margin-bottom:20px
+}
+
+.profile-card strong{
+  display:block;
+  margin-bottom:4px
+}
+
+.profile-card span{
+  color:var(--muted);
+  font-size:.94rem
+}
+
+section{
+  padding:64px 0;
+  border-top:1px solid var(--line)
+}
+
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+  align-items:end;
+  margin-bottom:34px
+}
+
+.eyebrow{
+  color:var(--accent);
+  font-size:.78rem;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  font-weight:800
+}
+
+h2{
+  font-size:2.1rem;
+  letter-spacing:-.035em;
+  margin:5px 0 0
+}
+
+h3{
+  margin:0 0 7px;
+  letter-spacing:-.015em
+}
+
+.section-intro{
+  color:var(--muted);
+  max-width:650px
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:0 42px
+}
+
+.card{
+  background:transparent;
+  border:0;
+  border-top:1px solid var(--line);
+  border-radius:0;
+  padding:24px 0
+}
+
+.card p{
+  color:var(--muted);
+  margin:7px 0 0
+}
+
+.tag-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:15px
+}
+
+.tag{
+  background:var(--surface2);
+  padding:5px 9px;
+  border-radius:3px;
+  font-size:.78rem;
+  color:var(--text)
+}
+
+.timeline{
+  display:grid;
+  gap:0
+}
+
+.item{
+  display:grid;
+  grid-template-columns:170px 1fr;
+  gap:30px;
+  padding:24px 0;
+  border-bottom:1px solid var(--line)
+}
+
+.item:last-child{
+  border-bottom:0
+}
+
+.date{
+  color:var(--accent);
+  font-weight:750;
+  font-size:.9rem
+}
+
+.sub{
+  color:var(--muted);
+  font-size:.94rem
+}
+
+.pub{
+  padding:22px 0;
+  border-bottom:1px solid var(--line)
+}
+
+.pub:last-child{
+  border-bottom:0
+}
+
+.pub-title{
+  font-size:1.05rem;
+  font-weight:720
+}
+
+.pub-meta{
+  color:var(--muted);
+  margin-top:5px;
+  font-size:.92rem
+}
+
+.badge{
+  display:inline-block;
+  margin-left:8px;
+  padding:3px 8px;
+  border-radius:999px;
+  background:var(--accent2);
+  color:var(--accent);
+  font-size:.72rem;
+  font-weight:800
+}
+
+.awards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px
+}
+
+.award{
+  padding:22px 0;
+  border-top:1px solid var(--line);
+  background:transparent
+}
+
+.award .year{
+  color:var(--accent);
+  font-weight:800;
+  font-size:.86rem
+}
+
+.contact{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:42px
+}
+
+.contact-box{
+  padding:22px 0;
+  border-top:1px solid var(--line);
+  background:transparent
+}
+
+.contact-box p{
+  color:var(--muted)
+}
+
+footer{
+  padding:40px 0;
+  color:var(--muted);
+  font-size:.86rem;
+  display:flex;
+  justify-content:space-between;
+  gap:20px
+}
+
+@media(max-width:800px){
+
+  .hero{
+    grid-template-columns:1fr;
+    padding-top:65px
+  }
+
+  .profile-card{
+    max-width:480px
+  }
+
+  .nav-links{
+    display:none
+  }
+
+  .grid,
+  .contact,
+  .awards{
+    grid-template-columns:1fr
+  }
+
+  .item{
+    grid-template-columns:1fr;
+    gap:5px
+  }
+
+  section{
+    padding:58px 0
+  }
+
+  .section-head{
+    display:block
+  }
+
+  h1{
+    font-size:3.4rem
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="app">
+
+<nav>
+  <div class="container nav-inner">
+
+    <a class="brand" href="#top">
+      Daniel A. Aboagye, PhD
+    </a>
+
+    <div class="nav-links">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#activity">Recent Activity</a>
+      <a href="#education">CV</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+  </div>
+</nav>
+
+
+<main id="top">
+
+<!-- HERO -->
+<div class="container hero">
+
+  <div>
+
+    <div class="kicker">
+      Soil Scientist · Soil Biogeochemistry · Sustainable Agriculture
+    </div>
+
+    <h1>
+      Soil carbon, organic matter and sustainable soil management.
+    </h1>
+
+    <p class="lead">
+      Welcome to my academic website. I study how agricultural management
+      influences soil carbon dynamics, organic matter stabilization and
+      nutrient cycling, with a focus on conservation agriculture and
+      sustainable residue management.
+    </p>
+
+    <div class="hero-actions">
+
+      <a class="btn primary" href="#research">
+        Explore my research
+      </a>
+
+      <a class="btn" href="#contact">
+        Get in touch
+      </a>
+
+      <a class="btn"
+         href="https://orcid.org/0009-0002-5693-8551"
+         target="_blank"
+         rel="noopener">
+        ORCID ↗
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <aside class="profile-card">
+
+    <div class="profile-mark">
+      DA
+    </div>
+
+    <strong>
+      Daniel A. Aboagye
+    </strong>
+
+    <span>
+      PhD, Tokyo University of Agriculture and Technology
+    </span>
+
+    <br><br>
+
+    <strong>
+      Research interests
+    </strong>
+
+    <span>
+      Soil carbon · POM/MAOM · residue decomposition ·
+      conservation agriculture · soil biogeochemistry
+    </span>
+
+  </aside>
+
+</div>
+
+
+<!-- RESEARCH -->
+<section id="research">
+
+<div class="container">
+
+  <div class="section-head">
+
+    <div>
+      <div class="eyebrow">Research</div>
+
+      <h2>
+        Questions that guide my work
+      </h2>
+    </div>
+
+    <p class="section-intro">
+      My work focuses on how management changes the quantity,
+      quality and fate of organic matter in agricultural soils.
+    </p>
+
+  </div>
+
+
+  <div class="grid">
+
+    <div class="card">
+
+      <h3>
+        Soil carbon & organic matter
+      </h3>
+
+      <p>
+        Carbon stabilization, soil organic matter dynamics,
+        particulate and mineral-associated organic matter
+        (POM/MAOM), and carbon saturation.
+      </p>
+
+      <div class="tag-list">
+        <span class="tag">SOC</span>
+        <span class="tag">POM</span>
+        <span class="tag">MAOM</span>
+        <span class="tag">C stabilization</span>
+      </div>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>
+        Residue & nutrient management
+      </h3>
+
+      <p>
+        Residue decomposition, residue-derived carbon,
+        organic amendments, nutrient cycling and strategies
+        for sustainable residue utilization.
+      </p>
+
+      <div class="tag-list">
+        <span class="tag">Residues</span>
+        <span class="tag">C:N</span>
+        <span class="tag">N cycling</span>
+        <span class="tag">Amendments</span>
+      </div>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>
+        Conservation agriculture
+      </h3>
+
+      <p>
+        Long-term no-tillage and soil-management effects on
+        carbon accumulation, soil structure and crop–soil
+        interactions.
+      </p>
+
+      <div class="tag-list">
+        <span class="tag">No-tillage</span>
+        <span class="tag">Soil health</span>
+        <span class="tag">Andosols</span>
+      </div>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>
+        Soil biogeochemistry
+      </h3>
+
+      <p>
+        Interactions among minerals, microorganisms and
+        organic matter, including carbon turnover, priming
+        and greenhouse-gas dynamics.
+      </p>
+
+      <div class="tag-list">
+        <span class="tag">Microbial CUE</span>
+        <span class="tag">Fe/Al minerals</span>
+        <span class="tag">CO₂</span>
+        <span class="tag">N₂O</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- PROJECTS -->
+<section id="projects">
+
+<div class="container">
+
+  <div class="section-head">
+
+    <div>
+      <div class="eyebrow">Selected work</div>
+
+      <h2>
+        Research projects
+      </h2>
+    </div>
+
+  </div>
+
+
+  <div class="grid">
+
+    <div class="card">
+
+      <h3>
+        Long-term no-tillage & residue-derived carbon
+      </h3>
+
+      <p>
+        My PhD research examined how long-term no-tillage and
+        residue application methods regulate the distribution
+        and accumulation of residue-derived carbon in soil
+        organic matter fractions in Japanese Andosols.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>
+        Residue-derived carbon & soil organic matter
+      </h3>
+
+      <p>
+        Experimental work using isotopically labelled plant
+        residues to trace carbon through particulate and
+        mineral-associated soil organic matter pools over
+        time and depth.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>
+        Sustainable agricultural inputs
+      </h3>
+
+      <p>
+        Research on organic amendments and nitrogen management,
+        including biochar–compost strategies and their
+        implications for crop production and soil fertility.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>
+        Biodegradable organic mulch materials
+      </h3>
+
+      <p>
+        Field research evaluating an organic mulch-board
+        material for lettuce production, including interactions
+        with algal biomass and plant growth and physiological
+        traits.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- RECENT ACTIVITY -->
+<section id="activity">
+
+<div class="container">
+
+  <div class="section-head">
+
+    <div>
+      <div class="eyebrow">News & activity</div>
+
+      <h2>
+        Recent activity
+      </h2>
+    </div>
+
+    <p class="section-intro">
+      Selected milestones, presentations and research activities.
+    </p>
+
+  </div>
+
+
+  <div class="timeline">
+
+    <div class="item">
+
+      <div class="date">
+        September 2026
+      </div>
+
+      <div>
+
+        <h3>
+          PhD completed
+        </h3>
+
+        <div class="sub">
+          Tokyo University of Agriculture and Technology
+        </div>
+
+        <p>
+          Completed doctoral research on long-term no-tillage,
+          residue decomposition and residue-derived carbon
+          accumulation in Andosols.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="item">
+
+      <div class="date">
+        June 2026
+      </div>
+
+      <div>
+
+        <h3>
+          WCSS 2026
+        </h3>
+
+        <div class="sub">
+          Nanjing, China
+        </div>
+
+        <p>
+          Presented research on soil carbon dynamics and
+          connected with researchers working on global soil
+          carbon processes.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="item">
+
+      <div class="date">
+        2025
+      </div>
+
+      <div>
+
+        <h3>
+          EGU OSPP Award
+        </h3>
+
+        <div class="sub">
+          Soil System Sciences
+        </div>
+
+        <p>
+          Received an Outstanding Student and PhD Candidate
+          Presentation recognition at the EGU General Assembly.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+
+<div class="container">
+
+  <div class="section-head">
+
+    <div>
+      <div class="eyebrow">Publications</div>
+
+      <h2>
+        Selected publications & outputs
+      </h2>
+    </div>
+
+    <p class="section-intro">
+      A growing record of work in soil science, carbon cycling
+      and sustainable agricultural management.
+    </p>
+
+  </div>
+
+
+  <div class="pub">
+
+    <div class="pub-title">
+
+      Long-Term No-Tillage and Residue Application Methods
+      Regulate the Distribution and Accumulation of
+      Residue-derived Carbon in Soil Organic Matter Fractions
+      through Distinct Pathways in Andosols
+
+      <span class="badge">
+        Manuscript
+      </span>
+
+    </div>
+
+    <div class="pub-meta">
+      Research on residue-derived C, POM/MAOM dynamics and
+      long-term conservation management in Andosols.
+    </div>
+
+  </div>
+
+
+  <div class="pub">
+
+    <div class="pub-title">
+
+      Effect of Long-Term No-Tillage Management on Crop
+      Residue Decomposition and Accumulation Patterns in
+      Andosols, Japan
+
+    </div>
+
+    <div class="pub-meta">
+      Doctoral research · Tokyo University of Agriculture
+      and Technology
+    </div>
+
+  </div>
+
+
+  <div class="pub">
+
+    <div class="pub-title">
+
+      Nitrogen management, biochar and compost effects
+      in Ghanaian rice production
+
+    </div>
+
+    <div class="pub-meta">
+      Aboagye et al. (2022) · Agricultural soil fertility
+      and nutrient-management research.
+    </div>
+
+  </div>
+
+
+  <p class="section-intro" style="margin-top:24px">
+
+    For a complete and current publication list, see
+
+    <a href="https://orcid.org/0009-0002-5693-8551"
+       target="_blank"
+       rel="noopener">
+      ORCID
+    </a>.
+
+  </p>
+
+</div>
+
+</section>
+
+
+<!-- EDUCATION -->
+<section id="education">
+
+<div class="container">
+
+  <div class="section-head">
+
+    <div>
+      <div class="eyebrow">Academic background</div>
+
+      <h2>
+        Education
+      </h2>
+    </div>
+
+  </div>
+
+
+  <div class="timeline">
+
+
+    <div class="item">
+
+      <div class="date">
+        2023–2026
+      </div>
+
+      <div>
+
+        <h3>
+          PhD in Agriculture / Soil Science
+        </h3>
+
+        <div class="sub">
+          Tokyo University of Agriculture and Technology,
+          Japan · United Graduate School of Agricultural Science
+        </div>
+
+        <p>
+          Research focus: long-term no-tillage, residue
+          decomposition and residue-derived carbon accumulation
+          in Andosols.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="item">
+
+      <div class="date">
+        2021–2023
+      </div>
+
+      <div>
+
+        <h3>
+          MSc in International Innovative Agricultural Science
+        </h3>
+
+        <div class="sub">
+          Tokyo University of Agriculture and Technology, Japan
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="item">
+
+      <div class="date">
+        2018–2019
+      </div>
+
+      <div>
+
+        <h3>
+          Exchange study
+        </h3>
+
+        <div class="sub">
+          Tokyo University of Agriculture and Technology, Japan
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="item">
+
+      <div class="date">
+        2015–2020
+      </div>
+
+      <div>
+
+        <h3>
+          BSc (Hons) Agriculture Science — Soil Science
+        </h3>
+
+        <div class="sub">
+          University of Ghana · First Class Honours
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- AWARDS -->
+<section id="awards">
+
+<div class="container">
+
+  <div class="section-head">
+
+    <div>
+      <div class="eyebrow">Recognition</div>
+
+      <h2>
+        Awards & academic activities
+      </h2>
+    </div>
+
+  </div>
+
+
+  <div class="awards">
+
+
+    <div class="award">
+
+      <div class="year">
+        2025
+      </div>
+
+      <h3>
+        EGU General Assembly OSPP Award
+      </h3>
+
+      <p>
+        Outstanding Student and PhD Candidate Presentation
+        recognition in Soil System Sciences.
+      </p>
+
+    </div>
+
+
+    <div class="award">
+
+      <div class="year">
+        2026
+      </div>
+
+      <h3>
+        World Congress of Soil Science
+      </h3>
+
+      <p>
+        Oral presentation at WCSS 2026 in Nanjing, China.
+      </p>
+
+    </div>
+
+
+    <div class="award">
+
+      <div class="year">
+        Research service
+      </div>
+
+      <h3>
+        Teaching & collaboration
+      </h3>
+
+      <p>
+        Teaching and research experience across TUAT and
+        the University of Ghana, alongside international
+        soil-science collaborations.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- METHODS -->
+<section id="skills">
+
+<div class="container">
+
+  <div class="section-head">
+
+    <div>
+      <div class="eyebrow">Methods</div>
+
+      <h2>
+        Research methods & tools
+      </h2>
+    </div>
+
+  </div>
+
+
+  <div class="grid">
+
+
+    <div class="card">
+
+      <h3>
+        Soil & isotope methods
+      </h3>
+
+      <p>
+        13C/15N tracer experiments, EA-IRMS, NPOC,
+        soil organic matter fractionation, microbial
+        biomass C/N, DOC and mineral-associated carbon
+        analyses.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>
+        Environmental measurements
+      </h3>
+
+      <p>
+        Gas-flux chamber measurements, CO₂/N₂O analyses,
+        soil incubation experiments and crop–soil measurements.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>
+        Molecular & microbial approaches
+      </h3>
+
+      <p>
+        qPCR/dPCR, 16S and ITS-based microbial community
+        analyses, and approaches to microbial carbon cycling.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>
+        Quantitative & spatial analysis
+      </h3>
+
+      <p>
+        R, tidyverse, emmeans, vegan, metafor, terra and sf,
+        with experience in statistical modelling and GIS workflows.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+
+<div class="container">
+
+  <div class="section-head">
+
+    <div>
+      <div class="eyebrow">Contact</div>
+
+      <h2>
+        Let's connect
+      </h2>
+    </div>
+
+    <p class="section-intro">
+      I am interested in research collaborations, academic
+      opportunities, and discussions around soil carbon and
+      sustainable soil management.
+    </p>
+
+  </div>
+
+
+  <div class="contact">
+
+
+    <div class="contact-box">
+
+      <h3>
+        Academic profiles
+      </h3>
+
+      <p>
+
+        <a href="https://orcid.org/0009-0002-5693-8551"
+           target="_blank"
+           rel="noopener">
+          ORCID
+        </a>
+
+        <br>
+
+        <a href="https://scholar.google.com/"
+           target="_blank"
+           rel="noopener">
+          Google Scholar
+        </a>
+
+        <br>
+
+        <span>
+          Google Scholar profile link can be added here.
+        </span>
+
+      </p>
+
+    </div>
+
+
+    <div class="contact-box">
+
+      <h3>
+        Email
+      </h3>
+
+      <p>
+        For research enquiries and collaboration,
+        please contact me by email.
+      </p>
+
+      <p>
+        <strong>
+          Email address can be added here.
+        </strong>
+      </p>
+
+    </div>
+
+
+  </div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<footer class="container">
+
+  <span>
+    © 2026 Daniel A. Aboagye
+  </span>
+
+  <span>
+    Academic profile · Soil Science · Japan
+  </span>
+
+</footer>
+
+
+</div>
+
+</body>
+</html>
